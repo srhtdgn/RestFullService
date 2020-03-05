@@ -4,4 +4,27 @@
 }
 
 <h2>Index</h2>
+<input type="button" name="BtnYazdir" value="Yazdır" id="BtnYazdir" />
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#BtnYazdir").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:56009/Sunucu.svc/Yazdir",
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function () {
+                        alert("Hata Oluştu");
+                    },
+
+                });
+            });
+        });
+
+    </script>
+    
+    }
 
